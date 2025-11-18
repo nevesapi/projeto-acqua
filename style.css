@@ -1,0 +1,86 @@
+:root {
+  --cor-dark: #111111;
+  --cor-light: #ffffff;
+  --cor-grey: #f1f1f1;
+  --cor-dark-blue: #34495e;
+  --cor-light-blue: #3498db;
+
+  --font-family: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--cor-light);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  height: 90vh;
+}
+
+.overlay {
+  background-image: url("./assets/images/predio2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.lancamento {
+  background-color: #11111165;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.lancamento p {
+  text-align: center;
+  color: var(--cor-light);
+  font-weight: 500;
+  text-shadow: 5px 5px 10px var(--cor-dark);
+}
+
+.lancamento p span {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.newsletter {
+  background-color: var(--cor-grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 0 1rem;
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    to right,
+    var(--cor-dark-blue),
+    var(--cor-light-blue)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
