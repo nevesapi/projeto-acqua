@@ -57,7 +57,7 @@ main {
 }
 
 .lancamento p span {
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 10vw, 3.5rem);
   font-weight: 700;
 }
 
@@ -74,7 +74,8 @@ main {
 }
 
 .newsletter h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 6vw, 2.5rem);
+
   margin-bottom: 0.5rem;
   background: linear-gradient(
     to right,
@@ -86,16 +87,19 @@ main {
   color: transparent;
 }
 
+.newsletter p {
+  font-size: clamp(0.875rem, 5vw, 1rem);
+}
+
 .newsletter h2 + p {
   font-weight: 600;
   font-style: italic;
-  font-size: 0.875rem;
   margin-bottom: 1rem;
 }
 
 .newsletter p + p {
-  font-size: 0.875rem;
   margin-bottom: 2rem;
+  max-width: 75ch;
 }
 
 .newsletter form {
@@ -107,14 +111,14 @@ main {
 
 .sr-only {
   position: absolute;
+  border: 0;
+  padding: 0;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
   white-space: nowrap;
   clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 
 .newsletter form {
@@ -157,12 +161,13 @@ main {
 }
 
 .andamento h2 {
-  font-size: 1.75rem;
+  /* clamp(valor minimo, ideal, valor máximo) */
+  font-size: clamp(1.75rem, 6vw, 2.25rem);
   margin-bottom: 0.25rem;
 }
 
 .andamento p {
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 6vw, 1.125rem);
 }
 
 .andamento img {
@@ -181,4 +186,28 @@ main {
 .galeria img:hover {
   transform: scale(1.05);
   /* 105% */
+}
+
+/*
+regra css 
+@media (condição) {
+  estilos que serão aplicado caso a condição seja verdadeira/válida
+} 
+*/
+
+@media (min-width: 744px) {
+  .andamento img {
+    max-width: 31%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .info-container {
+    display: flex;
+  }
+
+  .info-container section {
+    width: 100%;
+    max-width: 50%;
+  }
 }
